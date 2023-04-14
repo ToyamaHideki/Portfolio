@@ -7,8 +7,9 @@
     height: 100%;
   }
 
-  .slide-media {
-    position: relative; /*これを消すと高さいっぱいに画像が広がる*/
+  /*これを消すと高さいっぱいに画像が広がる*/
+  /* .slide-media {
+    position: relative; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,7 +26,15 @@
     object-fit: cover;
     display: flex;
     justify-content: center;
-    align-items: cente
+    align-items: center;
+  } */
+  .slide-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .swiper{
