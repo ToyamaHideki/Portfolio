@@ -1,0 +1,449 @@
+
+
+<!-- 不要な要素を削除し、スライダーのみ表現した -->
+<!-- これをもちいて作成することが可能-->
+
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Swiper DEMO</title>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://unpkg.com/swiper@8/swiper.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@400;700&display=swap");
+      :root {
+        --easing: cubic-bezier(0.2, 1, 0.2, 1);
+        --transition: 0.8s var(--easing);
+        --color-base: #f8f8f8;
+        --color-gray: #ddd;
+        --color-theme: #f5695f;
+        --color-theme-darken: #f12617;
+        --box-shadow: 0.8rem 0.8rem 1.2rem rgba(0, 0, 0, 0.05),
+          -0.8rem -0.8rem 1.2rem #fff;
+        --box-shadow-hover: 1rem 1rem 1.5rem rgba(0, 0, 0, 0.08),
+          -1rem -1rem 1.5rem #fff;
+        --box-shadow-inset: inset 0.8rem 0.8rem 1.2rem rgba(0, 0, 0, 0.05),
+          inset -0.8rem -0.8rem 1.2rem #fff;
+        --box-shadow-dark: 0.8rem 0.8rem 1.2rem rgba(0, 0, 0, 0.1),
+          -0.8rem -0.8rem 1.2rem rgba(#fff, 0.2);
+      }
+
+      html {
+        font-family: "Spartan", "游ゴシック体", YuGothic, "游ゴシック",
+          "Yu Gothic", "メイリオ", Meiryo, sans-serif;
+        font-size: 62.5%;
+        line-height: 1.8;
+        height: 100%;
+        word-break: break-word;
+        color: #333;
+        background-color: var(--color-base);
+        -webkit-appearance: none;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      body {
+        font-size: 1.6rem;
+        margin: 0;
+      }
+
+      *,
+      *::before,
+      *::after {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      ::-moz-selection {
+        color: #fff;
+        background: var(--color-theme);
+      }
+
+      ::selection {
+        color: #fff;
+        background: var(--color-theme);
+      }
+
+      img {
+        border: 0;
+        margin: 0;
+      }
+
+      figure {
+        margin: 0;
+      }
+
+      p {
+        margin: 0;
+        padding: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: #333;
+      }
+
+      ul,
+      ol {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-size: 1.6rem;
+        margin: 0;
+        padding: 0;
+      }
+
+      main {
+        display: block;
+      }
+
+      .l-inner {
+        position: relative;
+        -webkit-box-sizing: content-box;
+        box-sizing: content-box;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 10rem;
+      }
+
+      .l-section {
+        border-top: 1px solid #eee;
+      }
+      .l-section .l-inner {
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+      }
+
+      [class*="swiper"]:focus {
+        outline: none;
+      }
+
+      .slide-media,
+      .thumb-media {
+        position: relative;
+        overflow: hidden;
+      }
+      .slide-media img,
+      .thumb-media img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+      }
+
+      .swiper-button-prev,
+      .swiper-button-next {
+        display: grid;
+        place-content: center;
+        width: 6.4rem;
+        height: 6.4rem;
+        cursor: pointer;
+        -webkit-transition: var(--transition);
+        transition: var(--transition);
+      }
+      .swiper-button-prev::before,
+      .swiper-button-next::before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        content: "";
+        border-radius: 50%;
+        -webkit-box-shadow: var(--box-shadow);
+        box-shadow: var(--box-shadow);
+      }
+      .swiper-button-prev::after,
+      .swiper-button-next::after {
+        width: 1.2rem;
+        height: 1.2rem;
+        content: "";
+        border: solid var(--color-gray);
+        border-width: 3px 3px 0 0;
+      }
+      .swiper-button-prev::after {
+        margin-left: 0.4rem;
+        -webkit-transform: rotate(-135deg);
+        transform: rotate(-135deg);
+      }
+      .swiper-button-next::after {
+        margin-right: 0.4rem;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+      .swiper-button-disabled {
+        pointer-events: none;
+        opacity: 0;
+      }
+
+      .card05 {
+        overflow: hidden;
+      }
+      .card05 .swiper {
+        overflow: visible;
+      }
+      .card05 .swiper-wrapper {
+        -webkit-transition-timing-function: linear !important;
+        transition-timing-function: linear !important;
+      }
+      .card05 .swiper-slide {
+        width: -webkit-max-content;
+        width: -moz-max-content;
+        width: max-content;
+      }
+      .card05 .slide {
+        overflow: hidden;
+        width: 36rem;
+        border-radius: 4px;
+        -webkit-box-shadow: var(--box-shadow);
+        box-shadow: var(--box-shadow);
+      }
+      .card05 .slide-media {
+        padding-top: 62.5%;
+      }
+      .card05 .slide-media img {
+        height: calc(100% + 16px);
+        -webkit-transform: translateY(-16px);
+        transform: translateY(-16px);
+      }
+      .card05 .slide-content {
+        padding: 3.2rem;
+      }
+      .card05 .slide-date {
+        font-size: 1.2rem;
+        line-height: 1;
+        display: block;
+        color: var(--color-theme);
+      }
+      .card05 .slide-title {
+        line-height: 1.6;
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        height: 3.2em;
+        margin-top: 1.6rem;
+      }
+
+      @media only screen and (max-width: 1024px) {
+        html {
+          -webkit-text-size-adjust: 100%;
+        }
+        .l-inner {
+          padding: 0 4rem;
+        }
+        .pc {
+          display: none !important;
+        }
+      }
+
+      @media only screen and (max-width: 599px) {
+        html {
+          font-size: 50%;
+        }
+        .pc-tab {
+          display: none !important;
+        }
+        .card05 .slide {
+          width: 24rem;
+        }
+      }
+
+      @media only screen and (min-width: 1025px) {
+        .tab-sp {
+          display: none !important;
+        }
+        .swiper-button-prev::before,
+        .swiper-button-next::before {
+          -webkit-transition: var(--transition);
+          transition: var(--transition);
+        }
+        .swiper-button-prev:hover::before,
+        .swiper-button-next:hover::before {
+          -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+        }
+        .card05 .slide {
+          -webkit-transition: var(--transition);
+          transition: var(--transition);
+        }
+        .card05 .slide img {
+          -webkit-transition: var(--transition);
+          transition: var(--transition);
+        }
+        .card05 .slide:hover {
+          -webkit-transform: translateY(-16px);
+          transform: translateY(-16px);
+          -webkit-box-shadow: var(--box-shadow-hover);
+          box-shadow: var(--box-shadow-hover);
+        }
+        .card05 .slide:hover img {
+          -webkit-transform: translateY(0);
+          transform: translateY(0);
+        }
+        .card05 .swiper:hover .slide:not(:hover) {
+          opacity: 0.3;
+        }
+      }
+
+      @media only screen and (min-width: 600px) {
+        .sp {
+          display: none !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="l-wrapper">
+        <div class="card05 l-section">
+          <div class="l-inner">
+            <div
+              class="swiper swiper-initialized swiper-horizontal swiper-free-mode"
+            >
+              <div
+                class="swiper-wrapper"
+                id="swiper-wrapper-787b8ca32d55b8a10"
+                aria-live="off"
+                style="
+                  transform: translate3d(-5488px, 0px, 0px);
+                  transition-duration: 8000ms;
+                "
+              >
+                <a
+                  href="#"
+                  class="swiper-slide"
+                  data-swiper-slide-index="0"
+                  role="group"
+                >
+                  <article class="slide">
+                    <div class="slide-media img-cover">
+                      <img src="https://picsum.photos/id/139/800/500" alt="" />
+                    </div>
+                  </article>
+                </a>
+                <a
+                  href="#"
+                  class="swiper-slide"
+                  data-swiper-slide-index="1"
+                  role="group"
+                  aria-label="2 / 10"
+                  style="margin-right: 32px"
+                >
+                  <article class="slide">
+                    <div class="slide-media img-cover">
+                      <img src="https://picsum.photos/id/1060/800/500" alt="" />
+                    </div>
+                  </article>
+                </a>
+                <a
+                  href="#"
+                  class="swiper-slide"
+                  data-swiper-slide-index="2"
+                  role="group"
+                  aria-label="3 / 10"
+                  style="margin-right: 32px"
+                >
+                  <article class="slide">
+                    <div class="slide-media img-cover">
+                      <img src="https://picsum.photos/id/1023/800/500" alt="" />
+                    </div>
+                  </article>
+                </a>
+                <a
+                  href="#"
+                  class="swiper-slide swiper-slide-prev"
+                  data-swiper-slide-index="3"
+                  role="group"
+                  aria-label="4 / 10"
+                  style="margin-right: 32px"
+                >
+                  <article class="slide">
+                    <div class="slide-media img-cover">
+                      <img src="https://picsum.photos/id/1047/800/500" alt="" />
+                    </div>
+                  </article>
+                </a>
+                <a
+                  href="#"
+                  class="swiper-slide swiper-slide-active"
+                  data-swiper-slide-index="4"
+                  role="group"
+                  aria-label="5 / 10"
+                  style="margin-right: 32px"
+                >
+                  <article class="slide">
+                    <div class="slide-media img-cover">
+                      <img src="https://picsum.photos/id/248/800/500" alt="" />
+                    </div>
+                  </article>
+                </a>
+               
+              <!-- /swiper-wrapper -->
+
+            </div>
+            <!-- /swiper -->
+          </div>
+        </div>
+    </div>
+    <!-- /wrapper -->
+
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+      const slideLength = document.querySelectorAll(
+        ".card05 .swiper-slide"
+      ).length;
+
+      const initSwiper = () => {
+        const mySwiper = new Swiper(".card05 .swiper", {
+          slidesPerView: "auto",
+          spaceBetween: 16,
+          loop: true,
+          loopedSlides: slideLength,
+          speed: 8000,
+          autoplay: {
+            delay: 0,
+            disableOnInteraction: false,
+          },
+          freeMode: {
+            enabled: true,
+            momentum: false,
+          },
+          grabCursor: true,
+          breakpoints: {
+            1025: {
+              spaceBetween: 32,
+            },
+          },
+          on: {
+            touchEnd: (swiper) => {
+              swiper.slideTo(swiper.activeIndex + 1);
+            },
+          },
+        });
+      };
+
+      window.addEventListener("load", function () {
+        initSwiper();
+      });
+    </script>
+  </body>
+</html>
