@@ -61,13 +61,14 @@ body {
   color: #14685a;
   text-transform: uppercase;
   text-shadow: 1px 1px 0px #c9594a;
-  margin-left: 20px;
+  /* margin-left: 20px; */
 }
 
 .maintitle {
   position: relative;
   font-family: "Teko";
   margin: auto 0;
+  max-width: max-content;
   font-size: 15vw;
 }
 .maintitle:before {
