@@ -37,7 +37,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  text-transform: uppercase;
+  
 }
 
 /* 要素が消える */
@@ -70,6 +70,7 @@
   padding: 0;
   color: #e1c75b;
   text-shadow: 1px 1px 0px #c9594a;
+  text-transform: uppercase;
 }
 
 @media (max-width: 1024px) {
