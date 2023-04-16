@@ -74,7 +74,7 @@ body {
 .maintitle:before {
   position: absolute;
   content: "toyama hideki";
-  width: max-content;
+  min-width: max-content;
   color: white;
   z-index: -1;
   top: 2px;
