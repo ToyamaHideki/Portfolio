@@ -1,11 +1,10 @@
-
 /* 無印の設定 */
 html {
   font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ",
     Meiryo, sans-serif;
   font-size: 62.5%;
   line-height: 1.8;
-  min-height:100vh;
+  min-height: 100vh;
   word-break: break-word;
   color: #333;
   overflow: hidden;
@@ -23,9 +22,6 @@ body {
     "footer" auto
     / 1fr;
 }
-
-
-
 
 /* セクションごとの設定記述していく */
 .header {
@@ -51,45 +47,42 @@ body {
   color: #e1c75b;
   text-shadow: 1px 1px 0px #c9594a;
   gap: 2rem;
-  
-  .footer_menu-container,.footer_sns-container{
-    margin: 1rem;
-  }
+}
 
-  /* フッターメニュー側 */
-  .footer_menu-container {
-    .footer_menu-list {
-      display: flex;
-      flex-direction: row;
+.footer_menu-container,
+.footer_sns-container {
+  margin: 1rem;
+}
 
-      .footer_menu-listitem {
-        width: max-content;
-        font-size: 1.5rem;
-        margin-left: 1rem;
-        gap: 5px;
-      }
-    }
-  }
-  /* フッターSNS側 */
-  .footer_sns-container {
-    /* margin-left: auto; */
+/* フッターメニュー側 */
+.footer_menu-list {
+  display: flex;
+  flex-direction: row;
+}
+.footer_menu-list .footer_menu-listitem {
+  width: max-content;
+  font-size: 1.5rem;
+  margin-left: 1rem;
+  gap: 5px;
+}
 
-    .footer_sns-icon-list {
-      display: flex;
-      gap: 10px;
-
-      .icon {
-        display: block;
-        color: #e1c75b;
-        font-size: 2rem;
-      }
-    }
-  }
+/* フッターSNS側 */
+.footer_sns-container {
+  /* margin-left: auto; */
+}
+.footer_sns-icon-list {
+  display: flex;
+  gap: 10px;
+}
+.icon {
+  display: block;
+  color: #e1c75b;
+  font-size: 2rem;
 }
 
 /* モバイルサイズ（最大幅 767px）*/
 @media (max-width: 767px) {
-  .footer{
+  .footer {
     gap: 0;
     flex-direction: column;
   }
