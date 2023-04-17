@@ -1,0 +1,37 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper{
+    /* min-width: 100vw; */
+}
+
+.profile-img-container {
+    min-width: 300px;
+    aspect-ratio: 3/4;
+    background-color: beige;
+}
+.profile-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.profile-img-container {
+    float: left;
+    margin-right: 20px; /* 画像とテキストの間に余白をつけるために指定 */
+}
+
+.profile-text {
+    overflow: hidden;
+}
+
+/* モバイル画面などで幅が狭くなった場合には、画像とテキストを1列に表示するための@mediaクエリ */
+@media (max-width: 768px) {
+.profile-img-container {
+    float: none;
+    margin-right: 0;
+}
+}

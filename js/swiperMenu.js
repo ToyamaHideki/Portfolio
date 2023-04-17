@@ -3,7 +3,7 @@ const slideLength = document.querySelectorAll(
 ).length;
 
 const initSwiper = () => {
-  const mySwiper = new Swiper(".card05 .swiper", {
+  const mySwiper = new Swiper(".swiper", {
     spaceBetween: 16,
     loop: true,
     loopedSlides: slideLength,
