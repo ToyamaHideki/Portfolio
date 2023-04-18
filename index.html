@@ -13,22 +13,13 @@
     <link rel="stylesheet" href="./styles/home.css" />
     <link rel="stylesheet" href="./styles/swiper_menu.css" />
     <!-- About font -->
-    <link
-      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Corben:700"
-      rel="stylesheet"
-    />
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Corben:700" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Teko" rel="stylesheet">
-
+    <!-- GSAP BANDLE -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
     <!-- Swiper.js bandle -->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://unpkg.com/swiper@8/swiper.min.css"
-    />
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/swiper@8/swiper.min.css" />
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <!-- Scripts -->
     <script src="./js/swiperMenu.js" defer></script>
@@ -36,6 +27,7 @@
   </head>
 
   <body>
+    <div class="custom-cursor"></div>
     <!--Header -->
     <header class="header header_menu">
       <div class="card05">
@@ -74,7 +66,7 @@
                       </div>
                   </a>
                   <!-- WORKS LINK -->
-                  <a href="./pages/works.html" class="swiper-slide swiper-slide-prev" data-swiper-slide-index="5" >
+                  <a href="./pages/works.html" class="swiper-slide" data-swiper-slide-index="5" >
                     <div class="slide">
                         <div class="slide-media">
                             <span class="menu-list">works</span>
@@ -82,7 +74,7 @@
                     </div>
                   </a>
                   <!-- CONTACT LINK --> 
-                  <a href="./pages/contact.html" class="swiper-slide swiper-slide-active" data-swiper-slide-index="7" >
+                  <a href="./pages/contact.html" class="swiper-slide" data-swiper-slide-index="7" >
                       <div class="slide">
                           <div class="slide-media">
                               <span class="menu-list">contact</span>
@@ -90,22 +82,28 @@
                       </div>
                   </a>
               </div>
+            </div>
           </div>
-      </div>
-    </header>
-
+        </header>
     <!--main -->
+    <!-- TODO　影の挙動　疑似要素ではなくspan等のレイヤーを用意して実現できるかも -->
     <main class="main">
-      <div class="main_masklayer"></div>
-      <div class="maintitle-conatiner">
-        <h1 class="maintitle">
-          toyama hideki
-        </h1>
-        <p class="subtitle">frontend enginner</p>
-      </div>
-
-      <div class="img-container">
-        <img class="mainImg" src="./images/mainImg.jpg" alt="">
+      <div class="main-wrapper">
+        <div class="main_masklayer"></div>
+        <div class="maintitle-conatiner">
+          <h1 class="maintitle">
+            toyama hideki
+            <span class="title-shadow">toyama hideki</span>
+            <span class="title-deep-shadow">toyama hideki</span>
+          </h1>
+          <p class="subtitle">frontend enginner</p>
+        </div>
+        
+        <!-- 画像表示は一旦保留 -->
+        <!-- <div class="img-container">
+          <img class="mainImg" src="./images/mainImg.jpg" alt="">
+        </div> -->
+      
       </div>
     </main>
     <!--FOOTER -->

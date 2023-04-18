@@ -1,5 +1,5 @@
 .card05 {
-  height: 100px;
+  height: 100%;
 }
 
 .slide-media {
@@ -42,11 +42,6 @@
   margin: 0 10vw; /*ある程度余白を設けないと無限ループが作れない*/
 }
 
-.card05 .slide-media {
-  height: calc(100% + 16px);
-  -webkit-transform: translateY(-16px);
-  transform: translateY(-16px);
-}
 
 /* ホバーしていない要素を半透明にする */
 .card05 .swiper:hover .slide:not(:hover) {

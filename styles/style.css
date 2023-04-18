@@ -2,19 +2,18 @@
 
 /* 無印の設定 */
 html {
-  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ",
-    Meiryo, sans-serif;
+  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ", Meiryo, sans-serif;
   font-size: 62.5%;
   line-height: 1.8;
   min-height: 100vh;
   word-break: break-word;
   color: #333;
+  cursor: none;
 }
 body {
   width: 100vw;
   background-color: #e7e4df;
   font-size: 3rem;
-  margin: 0;
 
   display: grid;
   grid:
@@ -22,6 +21,10 @@ body {
     "main" 1fr
     "footer" auto
     / 1fr;
+}
+
+a{
+  cursor: none;
 }
 
 /* セクションごとの設定記述していく */
@@ -44,6 +47,20 @@ body {
   align-items: center;
 }
 
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 10px 10px 20px rgb(0, 0, 0)0;
+  background-color: rgba(226, 203, 28, 0.638);
+  transform: translate(-10px, -10px);
+  z-index: 9999;
+  pointer-events: none;
+}
+
 .main_masklayer {
   position: absolute;
   min-width: 100vw;
@@ -59,7 +76,6 @@ body {
   background-repeat: repeat;
   z-index: -1000;
 }
-
 
 .footer {
   grid-area: footer;

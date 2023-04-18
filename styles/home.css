@@ -1,9 +1,39 @@
+.main-wrapper{
+  min-width: 100vw;
+  min-height:100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .maintitle-conatiner {
   color: #14685a;
   text-transform: uppercase;
-  text-shadow: 1px 1px 0px #c9594a;
+  /* text-shadow: 1px 1px 0px #c9594a; */
   /* margin-left: 20px; */
+  flex-direction: column;
 }
+
+/* .maintitle {
+  position: relative;
+  font-family: "Teko";
+  margin: auto 0;
+  max-width: max-content;
+  font-size: 15vw;
+}
+.title-shadow,.title-deep-shadow{
+  position:absolute;
+  top: 0;
+  left: 0;
+}
+.title-shadow{
+  z-index: -5;
+  color: #bbbbbba0;
+}
+.title-deep-shadow{
+  color: rgba(2, 2, 2, 0.385);
+  z-index: -10;
+} */
 
 .maintitle {
   position: relative;
@@ -11,24 +41,55 @@
   margin: auto 0;
   max-width: max-content;
   font-size: 15vw;
+  text-shadow: 1px 1px 0 #FFF, -1px -1px 0 #FFF,
+              -1px 1px 0 #FFF, 1px  -1px 0 #FFF,
+               0px 1px 0 #FFF,  0   -1px 0 #FFF,
+              -1px 0   0 #FFF,  1px  0   0 #FFF;
 }
-.maintitle:before {
+
+.title-shadow,
+.title-deep-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.title-shadow {
+  color: rgba(2, 2, 2, 0.43);
+  text-shadow: 0 0 10px #bbbbbb;
+}
+
+.title-deep-shadow {
+  color: rgba(2, 2, 2, 0.65);
+  text-shadow: 0 0 20px #bbbbbb;
+}
+
+/* TODO　座標検知を利用して影を動的に変化させる */
+/* .maintitle:before {
   position: absolute;
   content: "toyama hideki";
   min-width: max-content;
-  color: white;
+  color: rgba(2, 2, 2, 0.385);
+  transform:  rotate(-2deg);
   z-index: -1;
   top: 2px;
   left: 2px;
-}
+  text-shadow: 10px 1px 0px #bbbbbb;
+} */
 
 .subtitle {
   position: relative;
-  display: inline;
+  display: block;
   font-size: 3vw;
   font-weight: 500;
+  margin-left: 30px;
 }
 
+
+/* 画像表示は一旦保留 */
+/* 
 .img-container {
   position: absolute;
   top: 60%;
@@ -58,14 +119,14 @@
 .mainImg {
   object-fit: cover;
   animation: anim 10s ease-in-out infinite alternate;
-}
+} */
 
 /* モバイルサイズ（最大幅 767px）*/
 @media (max-width: 767px) {
   /* TODO title-containerとimg-containerを絶対位置に変更　センターに重ねて表示する */
 
   .maintitle {
-    opacity: 0.7;
+    /* opacity: 0.7; */
     max-width: max-content;
     font-size: 18vw;
   }
@@ -85,7 +146,7 @@
     left: 1px;
   } */
 
-  .img-container {
+  /* .img-container {
     top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -93,7 +154,7 @@
     aspect-ratio: 1/1;
     object-fit: cover;
     animation: anim 10s ease-in-out infinite alternate;
-  }
+  } */
 }
 
 /* タブレットサイズ（最小幅 768px 〜 最大幅 991px）*/

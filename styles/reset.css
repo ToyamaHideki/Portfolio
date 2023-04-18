@@ -46,7 +46,7 @@
 }
 
 :where(button, label, select, summary, [role='button'], [role='option']) {
-	cursor: pointer; /* インタラクティブなものにカーソルを合わせる */
+	cursor: none; /* インタラクティブなものにカーソルを合わせる */
 }
 
 :where(:disabled) {
