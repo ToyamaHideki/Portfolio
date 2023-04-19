@@ -8,7 +8,8 @@ html {
   min-height: 100vh;
   word-break: break-word;
   color: #333;
-  cursor: none;
+  /* 後で復活させる */
+  /* cursor: none; */
 }
 body {
   width: 100vw;
@@ -127,6 +128,8 @@ a{
   font-size: 2rem;
 }
 
+
+
 /* モバイルサイズ（最大幅 767px）*/
 @media (max-width: 767px) {
   /* TODO title-containerとimg-containerを絶対位置に変更　センターに重ねて表示する */
@@ -137,6 +140,9 @@ a{
   .footer_menu-container,
   .footer_sns-container {
     margin-top: 0;
+  }
+  .pc-only{
+    display: none;
   }
 }
 

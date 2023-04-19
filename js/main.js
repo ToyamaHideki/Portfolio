@@ -56,15 +56,20 @@ const calculateDistance = (el, mouseX, mouseY) => {
 
 document.addEventListener('mousemove', e => {
   const { distanceX, distanceY } = calculateDistance(title, e.clientX, e.clientY);
+  gsap.to(title, {
+    x: -distanceX * 0.01,
+    y: -distanceY * 0.01,
+    duration: .5
+  });
   gsap.to(shadow, {
-    x: -distanceX * 0.04,
-    y: -distanceY * 0.04,
-    duration: 10
+    x: -distanceX * 0.1 /7,
+    y: -distanceY * 0.1 /7,
+    duration: 4
   });
   gsap.to(deepShadow, {
-    x: -distanceX * 0.1,
-    y: -distanceY * 0.1,
-    duration: 20
+    x: -distanceX * 0.04,
+    y: -distanceY * 0.04,
+    duration: 2
   });
 });
 
