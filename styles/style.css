@@ -1,8 +1,7 @@
-/* 共通要素を定義していくファイル */
-
-/* 無印の設定 */
+/*=================== TAGS DESIGN ==================== */
 html {
-  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ", Meiryo, sans-serif;
+  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ",
+    Meiryo, sans-serif;
   font-size: 62.5%;
   line-height: 1.8;
   min-height: 100vh;
@@ -15,7 +14,6 @@ body {
   width: 100vw;
   background-color: #e7e4df;
   font-size: 3rem;
-
   display: grid;
   grid:
     "header" 70px
@@ -23,14 +21,13 @@ body {
     "footer" auto
     / 1fr;
 }
-
-a{
-  cursor: none;
+main {
+  grid-area: main;
+  max-width: 100vw;
+  position: relative;
+  display: flex;
+  align-items: center;
 }
-
-/* セクションごとの設定記述していく */
-
-/* ヘッダー関連 */
 .header {
   grid-area: header;
   min-width: 100vw;
@@ -38,16 +35,33 @@ a{
   background-color: #14685a;
   box-shadow: 0px 3px 0 0 #e1c75b;
 }
-
-/* メイン要素、メイン配下 */
-.main {
-  grid-area: main;
-  max-width: 100vw;
-  position: relative;
-  display: flex;
-  align-items: center;
+a {
+  cursor: none;
 }
 
+/* =================== REUSED TOKEN =================== */
+.section-component{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 3rem auto;
+}
+
+.section-title{
+  display: block;
+  margin: 0 auto;
+  font-family: "Corben", cursive;
+  font-size: 5vw;
+  min-width: max-content;
+  margin: 0;
+  padding: 0;
+  color: #e1c75b;
+  text-shadow: 1px 1px 0px #c9594a;
+  text-transform: uppercase;
+}
+
+/* =================== ITEM DEESIGN =================== */
 .custom-cursor {
   position: fixed;
   top: 0;
@@ -55,13 +69,12 @@ a{
   width: 20px;
   height: 40px;
   border-radius: 50%;
-  box-shadow: 10px 10px 20px rgb(0, 0, 0)0;
+  box-shadow: 10px 10px 20px rgb(0, 0, 0) 0;
   background-color: rgba(226, 203, 28, 0.638);
   transform: translate(-10px, -10px);
   z-index: 9999;
   pointer-events: none;
 }
-
 .main_masklayer {
   position: absolute;
   min-width: 100vw;
@@ -77,15 +90,167 @@ a{
   background-repeat: repeat;
   z-index: -1000;
 }
+/*================== MAIN DESIGN ==================*/
+.main-wrapper {
+  min-width: 100vw;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/*================== MAIN TITLE CONTAINER ==================*/
+.maintitle-conatiner {
+  min-height: 100vh;
+  width: 100vw;
+  color: #14685a;
+  text-transform: uppercase;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
+  margin-bottom: 10rem;
+  
+}
+.maintitle {
+  position: relative;
+  font-family: "Teko";
+  /* max-width: max-content; */
+  font-size: 15vw;
+  text-shadow: 1px 1px 0 #fff, -1px -1px 0 #fff, -1px 1px 0 #fff,
+    1px -1px 0 #fff, 0px 1px 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff, 1px 0 0 #fff;
+}
+.title-shadow,
+.title-deep-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0.5;
+}
+.title-shadow {
+  color: rgba(2, 2, 2, 0.43);
+  text-shadow: 0 0 10px #bbbbbb;
+}
+.title-deep-shadow {
+  color: rgba(2, 2, 2, 0.65);
+  text-shadow: 0 0 20px #bbbbbb;
+}
+.subtitle {
+  position: relative;
+  display: block;
+  font-size: 3vw;
+  font-weight: 500;
+  margin-left: 30px;
+}
+/*================== PROFILE CONTAINER ==================*/
+.main {
+  flex-wrap: wrap;
+}
+
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 3rem auto;
+  
+}
+
+.image-container {
+  width: 400px;
+  height: 400px;
+  margin-right: 5rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-text-container {
+  margin-top: 5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-name {
+  display: inline-block;
+  font-size: 3rem;
+  margin: 0 auto;
+  /* margin-bottom: 1rem; */
+}
+
+.profile-description {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.profile-list {
+  margin-bottom: 1.5rem;
+}
+.initiative{
+  width: 80%;
+}
+
+.profile-list li {
+  font-size: 2rem;
+}
+
+.profile-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.profile-links li {
+  margin-right: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.profile-links a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #333;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom-color 0.2s ease-in-out;
+}
+
+.profile-links a:hover {
+  border-bottom-color: #333;
+}
+
+@media screen and (max-width: 700px) {
+  .image-container {
+    margin: 3rem 0;
+  }
+
+  .profile-name,
+  .profile-description {
+    display: block;
+    text-align: center;
+    margin: 0 auto 1rem;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .image-container {
+    width: 280px;
+    height: 280px;
+  }
+}
+/*================== FOOTER CONTAINER ==================*/
 .footer {
   grid-area: footer;
   display: flex;
-  /* 共通設定 */
-  /*＝＝ 背景関連 ＝＝*/
   background-color: #14685a;
   box-shadow: 0px -2px 0 0 #e1c75b;
-  /*＝＝ フォント関連 ＝＝*/
   font-family: "Corben", cursive;
   color: #e1c75b;
   text-shadow: 1px 1px 0px #c9594a;
@@ -128,8 +293,6 @@ a{
   font-size: 2rem;
 }
 
-
-
 /* モバイルサイズ（最大幅 767px）*/
 @media (max-width: 767px) {
   /* TODO title-containerとimg-containerを絶対位置に変更　センターに重ねて表示する */
@@ -141,7 +304,7 @@ a{
   .footer_sns-container {
     margin-top: 0;
   }
-  .pc-only{
+  .pc-only {
     display: none;
   }
 }

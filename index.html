@@ -5,30 +5,30 @@
     <meta name="format-detection" content="telephone=no" />
     <meta name="viewport" content="width=device-width" />
 
-    <title>Toyama Hideki | HOME</title>
+    <title>Toyama Hideki </title>
 
-    <!-- Styles -->
+<!-- Styles -->
     <link rel="stylesheet" href="./styles/reset.css" />
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./styles/home.css" />
     <link rel="stylesheet" href="./styles/swiper_menu.css" />
-    <!-- About font -->
+<!-- About font -->
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css?family=Corben:700" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Teko" rel="stylesheet">
-    <!-- GSAP BANDLE -->
+<!-- GSAP BANDLE -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
-    <!-- Swiper.js bandle -->
+<!-- Swiper.js bandle -->
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/swiper@8/swiper.min.css" />
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-    <!-- Scripts -->
+<!-- Scripts -->
     <script src="./js/swiperMenu.js" defer></script>
     <script src="./js/main.js" defer></script>
   </head>
 
   <body>
     <div class="custom-cursor"></div>
-    <!--Header -->
+<!--Header -->
     <header class="header header_menu">
       <div class="card05">
           <div class="swiper swiper-initialized swiper-horizontal swiper-free-mode">
@@ -85,30 +85,66 @@
             </div>
           </div>
         </header>
-    <!--main -->
-    <!-- TODO　影の挙動　疑似要素ではなくspan等のレイヤーを用意して実現できるかも -->
-    <main class="main">
+<!--main -->
+    <main >
       <div class="main-wrapper">
         <div class="main_masklayer"></div>
-        <div class="maintitle-conatiner">
+<!-- Home Component -->
+        <section class="maintitle-conatiner">
           <h1 class="maintitle">
             toyama hideki
             <span class="title-shadow">toyama hideki</span>
             <span class="title-deep-shadow">toyama hideki</span>
           </h1>
           <p class="subtitle">frontend enginner</p>
-        </div>
-        
-        <!-- 画像表示は一旦保留 -->
-        <!-- <div class="img-container">
-          <img class="mainImg" src="./images/mainImg.jpg" alt="">
-        </div> -->
-      
+          </section>
+<!-- profile Component -->
+          <h3 class="section-title">PROFILE</h3>
+          <section class="section-component">
+              <div class="image-container">
+                <img class="profile-img" src="../images/mainImg.jpg" alt="Profile Image">
+              </div>
+                <div class="profile-text-container">
+                  <h2 class="profile-name">外山 秀樹</h2>
+                    <p class="profile-description">- 自己紹介 -</p>
+                      <ul class="profile-list">
+                        <li><strong>生年月日:</strong> 1994年10月4日</li>
+                        <li><strong>出身地:</strong> 愛知県名古屋市</li>
+                      </ul>
+                    <p class="profile-description">- 資格 -</p>
+                      <ul class="profile-list">
+                        <li>2021/7 : Webクリエイター(上級)</li>
+                        <li>2022/9 : ITパスポート試験</li>
+                        <li>2022/2 : Java Programmer Silver </li>
+                        <li>2022/8 : HTML5認定試験 Lv.1</li>
+                        <li>2023/1 : HTML5認定試験 Lv.2</li>
+                      </ul>
+                </div>
+                <div class="profile-container ">
+                  <p class="profile-description">- 現在の取り組み -</p>
+                    <ul class="profile-list initiative">
+                      <li>
+                        ・昨年から毎年1つ以上のIT資格取得を掲げて行動。 <br class="pc-only"/>
+                        現在は「基本情報技術者試験」の資格取得を目指しに通勤時間を活用しながら学習を進める
+                      </li>
+                      <li>
+                        ・昨年から今年にかけてフロントエンドエンジニアとして成長するため、<br class="pc-only"/>
+                        資格勉強やUdemyでの学習を通してフロントの知識を強化、最近ではReactJS,NextJSを学習中
+                      </li>
+                    </ul>
+                <p class="profile-description">- 今後取り組みたいこと -</p>
+                  <ul class="profile-list initiative">
+                    <li>・WebGLを学びインタラクティブな技術の学習</li>
+                    <li>・Blenderなどの3Dグラフィックスに触れる</li>
+                  </ul>
+              </div>
+          </section>
       </div>
+    </div>
     </main>
     <!--FOOTER -->
     <footer class="footer">
-        <div class="footer_menu-container">
+      <div class="footer_menu-container">
             <span class="footer_title">menu</span>
             <ul class="footer_menu-list">
                 <li class="footer_menu-listitem">career</li>
@@ -127,6 +163,5 @@
             </div>
         </div>
     </footer>
-
   </body>
 </html>
