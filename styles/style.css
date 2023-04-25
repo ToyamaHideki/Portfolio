@@ -1,4 +1,7 @@
 /*=================== TAGS DESIGN ==================== */
+/* *{
+  border: 1px solid #333;
+} */
 html {
   font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ",
     Meiryo, sans-serif;
@@ -9,6 +12,7 @@ html {
   color: #333;
   /* 後で復活させる */
   /* cursor: none; */
+  scroll-behavior: smooth;
 }
 body {
   width: 100vw;
@@ -40,7 +44,7 @@ a {
 }
 
 /* =================== REUSED TOKEN =================== */
-.section-component{
+.section-component {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,7 +52,7 @@ a {
   margin: 3rem auto;
 }
 
-.section-title{
+.section-title {
   display: block;
   margin: 0 auto;
   font-family: "Corben", cursive;
@@ -92,7 +96,8 @@ a {
 }
 /*================== MAIN DESIGN ==================*/
 .main-wrapper {
-  min-width: 100vw;
+  max-width: 960px;
+  margin: 0 auto;
   min-height: 100%;
   display: flex;
   flex-direction: column;
@@ -102,7 +107,7 @@ a {
 /*================== MAIN TITLE CONTAINER ==================*/
 .maintitle-conatiner {
   min-height: 100vh;
-  width: 100vw;
+  min-width: 100vw;
   color: #14685a;
   text-transform: uppercase;
   flex-direction: column;
@@ -111,7 +116,6 @@ a {
   align-items: center;
 
   margin-bottom: 10rem;
-  
 }
 .maintitle {
   position: relative;
@@ -134,7 +138,7 @@ a {
   text-shadow: 0 0 10px #bbbbbb;
 }
 .title-deep-shadow {
-  color: rgba(2, 2, 2, 0.65);
+  color: rgba(26, 46, 37, 0.45);
   text-shadow: 0 0 20px #bbbbbb;
 }
 .subtitle {
@@ -155,7 +159,6 @@ a {
   align-items: center;
   flex-wrap: wrap;
   margin: 3rem auto;
-  
 }
 
 .image-container {
@@ -193,7 +196,7 @@ a {
 .profile-list {
   margin-bottom: 1.5rem;
 }
-.initiative{
+.initiative {
   width: 80%;
 }
 
@@ -245,6 +248,118 @@ a {
     height: 280px;
   }
 }
+/*================== CAREER CONTAINER ==================*/
+
+/*タイムライン全体の設定*/
+.timeline {
+
+  max-width: 70vw;
+  width: 100%;
+  margin: 50px auto;
+  padding: 0 30px;
+}
+
+.timeline li {
+  /*線の起点とするためrelativeを設定*/
+  position: relative;
+  list-style: none;
+  padding: 0 0 20px 0;
+}
+
+.timeline dl {
+  margin: 0 0 20px 3em;
+}
+
+.timeline dd strong {
+  display: block;
+  padding: 10px 0;
+}
+.timeline dd  {
+  font-size: 1.5rem;
+}
+.timeline strong  {
+  font-size:2rem;
+}
+
+/*絶対配置で線を設定*/
+.border-line {
+  /*線の位置*/
+  position: absolute;
+  left: 0.3em;
+  top: 0;
+  width: 2px; /*線の太さ*/
+  height: 0; /*はじめは高さを0に*/
+  background: #ccc;
+}
+
+/*タイムラインの見出し横の丸の位置と形状*/
+.timeline li::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background: #666;
+  border-radius: 50%;
+}
+
+/*================== SKILL CONTAINER ==================*/
+.skill {
+  margin-bottom: 20px;
+}
+.skill__wrap{
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.skill h3 {
+  margin: 0 0 5px;
+}
+.skill__img{
+  margin:auto 0 ;
+}
+.skill_name{
+  font-size: 3rem;
+}
+.skill_text{
+  font-size: 2rem;
+}
+
+/*================== WORKS CONTAINER ==================*/
+.works__container{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.works__component{
+  margin-bottom: 3rem;
+}
+.works__component__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom:3rem ;
+}
+.works__component__img{
+  width: 450px;
+  height: auto;
+  margin: 0 auto;
+  box-shadow: 8px 10px 8px 0px #919090;
+}
+.works__component__img:hover {
+  transition: all .3s;
+  transform: translate(0px,5px);
+  box-shadow: 0 0 0 0;
+  opacity: .5;
+}
+.works__component__img:not(:hover) {
+  transition: all .3s;
+  transform: translate(0px,0px);
+  box-shadow: 8px 10px 8px 0px #919090;
+  opacity: 1;
+}
+
 /*================== FOOTER CONTAINER ==================*/
 .footer {
   grid-area: footer;
@@ -295,6 +410,8 @@ a {
 
 /* モバイルサイズ（最大幅 767px）*/
 @media (max-width: 767px) {
+
+
   /* TODO title-containerとimg-containerを絶対位置に変更　センターに重ねて表示する */
   .footer {
     gap: 0;
@@ -310,8 +427,20 @@ a {
 }
 
 /* タブレットサイズ（最小幅 768px 〜 最大幅 991px）*/
-@media (min-width: 768px) and (max-width: 991px) {
-  /* ここにCSSを記述 */
+@media screen and (max-width: 991px) {
+  .skill__wrap{
+    flex-wrap: wrap;
+    max-width: 80vw;
+  }
+  .skill_name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom:20px ;
+  }
+  .skill__img{
+    margin: 0 auto  ;
+  }
 }
 
 /* ノートパソコン/デスクトップサイズ（最小幅 992px 〜 最大幅 1199px）*/

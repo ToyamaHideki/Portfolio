@@ -1,15 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-//     const cursor = document.querySelector(".custom-cursor");
 
-//     gsap.set(cursor, { xPercent: -50, yPercent: -50 });
-
-//     document.addEventListener("mousemove", (event) => {
-//     gsap.to(cursor, {
-//         duration: 0.5,
-//         x: event.clientX,
-//         y: event.clientY,
-//     });
-// })
 
 const cursor = document.querySelector(".custom-cursor");
 const links = document.querySelectorAll("a");
@@ -54,6 +44,7 @@ const calculateDistance = (el, mouseX, mouseY) => {
   return { distanceX, distanceY };
 }
 
+// キービジュアルの影の取り扱いの計算
 document.addEventListener('mousemove', e => {
   const { distanceX, distanceY } = calculateDistance(title, e.clientX, e.clientY);
   gsap.to(title, {
@@ -74,4 +65,38 @@ document.addEventListener('mousemove', e => {
 });
 
 
+
+// Career コンポーネントのスクロール検知とライン描写の設定
+function ScrollTimelineAnime(){
+  const listItems = document.querySelectorAll('.timeline li');
+  const startPoint = 100; // 線をスタートさせる位置を指定 ※レイアウトによって調整してください
+
+  listItems.forEach((item) => {
+    const elemPos = item.offsetTop; // 上からの高さ取得
+    const scroll = window.pageYOffset; // スクロール値取得
+    const windowHeight = window.innerHeight; // windowの高さ取得
+
+    if (scroll >= elemPos - windowHeight - startPoint) {
+      const H = item.offsetHeight; // liの余白と高さを含めた数値を取得
+      const percent = (scroll + startPoint - elemPos) / (H / 2) * 100; // liの余白と高さの半分で線を100％に伸ばす
+
+      // 100% を超えたらずっと 100% を入れ続ける
+      const borderLine = item.querySelector('.border-line');
+      if (percent > 100) {
+        borderLine.style.height = "100%"; //CSSでパーセント指定
+      } else {
+        borderLine.style.height = percent + "%"; //CSSでパーセント指定
+      }
+    }
+  });
+}
+
+window.addEventListener('scroll', function(){
+  ScrollTimelineAnime(); // 線が伸びる関数を呼ぶ
+});
+});
+
+
+window.addEventListener('load', function(){
+  ScrollTimelineAnime(); // 線が伸びる関数を呼ぶ
 });
