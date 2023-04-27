@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  ScrollReveal().reveal(".section-title", {
+  ScrollReveal().reveal(".section__title", {
     duration: 1600,
     origin: "top",
     distance: "20px",
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   ScrollReveal().reveal(".timeline li", {
     duration: 1600,
-    delay:500,
+    delay:100,
     origin: "top",
     distance: "20px",
     reset: false,
@@ -41,13 +41,13 @@ document.addEventListener("DOMContentLoaded", () => {
     reset: false,
   });
 
-  ScrollReveal().reveal(".maintitle-conatiner", {
-    duration: 5000,
+  ScrollReveal().reveal(".maintitle", {
+    duration: 4000,
   });
 
   setTimeout(() => {
     dispCharSubtitle();
-  }, 4000);
+  }, 2000);
 
   const cursor = document.querySelector(".custom-cursor");
   const links = document.querySelectorAll("a");

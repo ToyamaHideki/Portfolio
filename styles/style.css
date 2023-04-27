@@ -3,8 +3,6 @@
   border: 1px solid #333;
 } */
 html {
-  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ",
-    Meiryo, sans-serif;
   font-size: 62.5%;
   line-height: 1.8;
   min-height: 100vh;
@@ -13,6 +11,7 @@ html {
   /* 後で復活させる */
   /* cursor: none; */
   scroll-behavior: smooth;
+  text-transform: uppercase;
 }
 body {
   width: 100vw;
@@ -26,10 +25,10 @@ body {
     / 1fr;
 }
 main {
+  font-family: "M PLUS 1p";
   grid-area: main;
-  max-width: 100vw;
+  width: 100vw;
   position: relative;
-  display: flex;
   align-items: center;
 }
 .header {
@@ -39,12 +38,10 @@ main {
   background-color: #14685a;
   box-shadow: 0px 3px 0 0 #e1c75b;
 }
-a {
-  cursor: none;
-}
+
 
 /* =================== REUSED TOKEN =================== */
-.section-component {
+.section__component {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,7 +49,7 @@ a {
   margin: 3rem auto;
 }
 
-.section-title {
+.section__title {
   display: block;
   margin: 0 auto;
   font-family: "Corben", cursive;
@@ -62,7 +59,7 @@ a {
   padding: 0;
   color: #e1c75b;
   text-shadow: 1px 1px 0px #c9594a;
-  text-transform: uppercase;
+
 }
 
 /* =================== ITEM DEESIGN =================== */
@@ -105,7 +102,7 @@ a {
   justify-content: center;
 }
 /*================== MAIN TITLE CONTAINER ==================*/
-.maintitle-conatiner {
+.maintitle__conatiner {
   min-height: 100vh;
   min-width: 100vw;
   color: #14685a;
@@ -114,7 +111,6 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-
   margin-bottom: 10rem;
 }
 .maintitle {
@@ -125,6 +121,7 @@ a {
   text-shadow: 1px 1px 0 #fff, -1px -1px 0 #fff, -1px 1px 0 #fff,
     1px -1px 0 #fff, 0px 1px 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff, 1px 0 0 #fff;
 }
+
 .title-shadow,
 .title-deep-shadow {
   position: absolute;
@@ -150,34 +147,34 @@ a {
   opacity: 0;
 }
 /*================== PROFILE CONTAINER ==================*/
-.main {
-  flex-wrap: wrap;
-}
 
-.profile-container {
+/* 謎のクラス　少し残しておく */
+/* .profile-container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   margin: 3rem auto;
-}
+} */
 
-.image-container {
-  width: 400px;
-  height: 400px;
+.profile__imageContainer {
+  max-width: 400px;
+  max-height: auto;
   margin-right: 5rem;
   border-radius: 50%;
   overflow: hidden;
 }
 
-.profile-img {
+.profile__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.profile-text-container {
+.profile__textarea {
   margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -189,20 +186,31 @@ a {
   /* margin-bottom: 1rem; */
 }
 
-.profile-description {
+.profile__description {
   font-size: 2rem;
   margin-bottom: 1rem;
 }
 
-.profile-list {
+.profile__list {
   margin-bottom: 1.5rem;
 }
 .initiative {
   width: 80%;
 }
 
-.profile-list li {
+.profile__list li {
   font-size: 2rem;
+  margin-bottom: .5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profile__list li:last-child {
+  margin-bottom: 50px;
+}
+
+.profile__list .genru{
+  margin-bottom: .5rem;
 }
 
 .profile-links {
@@ -230,34 +238,13 @@ a {
   border-bottom-color: #333;
 }
 
-@media screen and (max-width: 700px) {
-  .image-container {
-    margin: 3rem 0;
-  }
 
-  .profile-name,
-  .profile-description {
-    display: block;
-    text-align: center;
-    margin: 0 auto 1rem;
-  }
-}
-
-@media screen and (max-width: 420px) {
-  .image-container {
-    width: 280px;
-    height: 280px;
-  }
-}
 /*================== CAREER CONTAINER ==================*/
 
-/*タイムライン全体の設定*/
-.timeline {
 
-  max-width: 70vw;
+.timeline {
   width: 100%;
   margin: 50px auto;
-  padding: 0 30px;
 }
 
 .timeline li {
@@ -268,7 +255,10 @@ a {
 }
 
 .timeline dl {
-  margin: 0 0 20px 3em;
+  margin: 0 0 20px 1em;
+}
+.timeline dt {
+  font-size: 2rem;
 }
 
 .timeline dd strong {
@@ -330,39 +320,44 @@ a {
 /*================== WORKS CONTAINER ==================*/
 .works__container{
   display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 3rem;
   flex-wrap: wrap;
 }
 .works__component{
   margin-bottom: 3rem;
 }
-.works__component__title {
+.works__title {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom:3rem ;
 }
-.works__component__img{
-  width: 450px;
+.works__title span{
+  font-size: 1.5rem;
+}
+.works__imgContainer{
+  max-width: 450px;
   height: auto;
   margin: 0 auto;
   box-shadow: 8px 10px 8px 0px #919090;
 }
-.works__component__img:hover {
+.works__imgContainer:hover {
   position: relative;
   transition: all .3s;
   transform: translate(0px,5px);
   box-shadow: 0 0 0 0;
   opacity: .5;
 }
-.works__component__img:not(:hover) {
+.works__imgContainer:not(:hover) {
   transition: all .3s;
   transform: translate(0px,0px);
   box-shadow: 8px 10px 8px 0px #919090;
   opacity: 1;
 }
 
-.works__component__link {
+.works__link {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -374,8 +369,13 @@ a {
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
-.works__component:hover .works__component__link {
+
+ .works__link:hover {
   opacity: 1;
+}
+
+.works__textContainer a{
+  font-size: 1.5rem;
 }
 
 
@@ -447,6 +447,13 @@ a {
 
 /* タブレットサイズ（最小幅 768px 〜 最大幅 991px）*/
 @media screen and (max-width: 991px) {
+ 
+}
+
+
+
+@media screen and (max-width: 960px) {
+
   .skill__wrap{
     flex-wrap: wrap;
     max-width: 80vw;
@@ -460,14 +467,22 @@ a {
   .skill__img{
     margin: 0 auto  ;
   }
-}
+  }
+  
+  @media screen and (max-width: 520px) {
 
-/* ノートパソコン/デスクトップサイズ（最小幅 992px 〜 最大幅 1199px）*/
-@media (min-width: 992px) and (max-width: 1199px) {
-  /* ここにCSSを記述 */
-}
+    .profile__imageContainer{
+      width: 250px;
+      height: 250px;
+      margin: 0 auto;
+    }
 
-/* 大型デスクトップサイズ（最小幅 1200px）*/
-@media (min-width: 1200px) {
-  /* ここにCSSを記述 */
-}
+    .timeline {
+      max-width: 80vw;
+    }
+
+
+    .works__component__img__wrap{
+      max-width: 80vw;
+    }
+  }

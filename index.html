@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="format-detection" content="telephone=no" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Toyama Hideki </title>
 
@@ -16,6 +16,7 @@
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css?family=Corben:700" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Teko" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
 <!-- GSAP BANDLE -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
 <!-- Swiper.js bandle -->
@@ -31,7 +32,6 @@
   </head>
 
   <body scroll-behavior = "smooth" >
-    <div class="custom-cursor"></div>
 <!--Header -->
     <header class="header header_menu">
       <div class="card05">
@@ -94,7 +94,7 @@
       <div class="main-wrapper">
         <div class="main_masklayer"></div>
 <!-- Home Component -->
-        <section class="maintitle-conatiner">
+        <section class="maintitle__conatiner">
           <h1 class="maintitle">
             toyama hideki
             <span class="title-shadow">toyama hideki</span>
@@ -103,49 +103,51 @@
           <p class="subtitle">frontend enginner</p>
           </section>
 <!-- profile Component -->
-          <h3 class="section-title" id="profile">PROFILE</h3>
-          <section class="section-component">
-              <div class="image-container">
-                <img class="profile-img" src="../images/mainImg.jpg" alt="Profile Image">
+          <h3 class="section__title" id="profile">PROFILE</h3>
+          <section class="section__component">
+            <!-- 画像を表示するレイヤー -->
+              <div class="profile__imageContainer">
+                <img class="profile__img" src="../images/mainImg.jpg" alt="Profile Image">
               </div>
-                <div class="profile-text-container">
-                  <h2 class="profile-name">外山 秀樹</h2>
-                    <p class="profile-description">- 自己紹介 -</p>
-                      <ul class="profile-list">
-                        <li><strong>生年月日:</strong> 1994年10月4日</li>
-                        <li><strong>出身地:</strong> 愛知県名古屋市</li>
-                      </ul>
-                    <p class="profile-description">- 資格 -</p>
-                      <ul class="profile-list">
-                        <li>2021/7 : Webクリエイター(上級)</li>
-                        <li>2022/9 : ITパスポート試験</li>
-                        <li>2022/2 : Java Programmer Silver </li>
-                        <li>2022/8 : HTML5認定試験 Lv.1</li>
-                        <li>2023/1 : HTML5認定試験 Lv.2</li>
-                      </ul>
-                </div>
-                <div class="profile-container ">
-                  <p class="profile-description">- 現在の取り組み -</p>
-                    <ul class="profile-list initiative">
+              <!-- 自己紹介を表示するレイヤー -->
+              <div class="profile__textarea">
+                <h2 class="profile-name">外山 秀樹</h2>
+                    <ul class="profile__list">
+                      <li><strong>生年月日:</strong> 1994年10月4日</li>
+                      <li><strong>出身地:</strong> 愛知県名古屋市</li>
+                    </ul>
+                  <p class="profile__description">- 趣味 -</p>
+                    <ul class="profile__list">
+                      <li class="genru">-outdoor-</li>
+                      <li>キャンプ、車中泊旅</li>
+                      <li>ボルダリング、サイクリング</li>
+                      <li>写真撮影、動画撮影</li>
+                      <li class="genru">-indoor-</li>
+                      <li>アニメ、映画、音楽</li>
+                      <li>お酒を飲むこと</li>
+                    </ul>
+                    <p class="profile__description">- 現在の取り組み -</p>
+                    <ul class="profile__list initiative">
                       <li>
-                        ・昨年から毎年1つ以上のIT資格取得を掲げて行動。 <br class="pc-only"/>
-                        現在は「基本情報技術者試験」の資格取得を目指しに通勤時間を活用しながら学習を進める
+                        昨年から毎年1つ以上のIT資格取得を掲げて行動。 <br class="pc-only"/>
+                        現在は「基本情報技術者試験」の資格取得を目指し
+                        通勤時間を活用しながら学習を進める
                       </li>
                       <li>
-                        ・昨年から今年にかけてフロントエンドエンジニアとして成長するため、<br class="pc-only"/>
+                        また昨年から今年にかけてフロントエンドエンジニアを目指し、<br class="pc-only"/>
                         資格勉強やUdemyでの学習を通してフロントの知識を強化、最近ではReactJS,NextJSを学習中
                       </li>
                     </ul>
-                <p class="profile-description">- 今後取り組みたいこと -</p>
-                  <ul class="profile-list initiative">
-                    <li>・WebGLを学びインタラクティブな技術の学習</li>
-                    <li>・Blenderなどの3Dグラフィックスに触れる</li>
-                  </ul>
-              </div>
+                    <p class="profile__description">- 今後取り組みたいこと -</p>
+                    <ul class="profile__list initiative">
+                      <li>・WebGLを学びインタラクティブな技術の学習</li>
+                      <li>・Blenderなどの3Dグラフィックスに触れる</li>
+                    </ul>
+                  </div>
           </section>
 <!-- Carrer Component -->
-            <h3 class="section-title" id="career">Carrer</h3>
-              <section class="section-component">
+            <h3 class="section__title" id="career">Carrer</h3>
+              <section class="section__component career__timeline">
                 <ul class="timeline">
                   <!-- 入力データ -->
                   <li>
@@ -161,7 +163,7 @@
                     <li>
                       <dl>
                         <dt>2021/8~12月</dt>
-                          <dd><strong>職業訓練校WEBアプリコース(6カ月間)</strong>
+                          <dd><strong>職業訓練校WEBアプリコース</strong>
                             アルゴリズム基礎からHTML/CSS/JavaScript/php/Java等のプログラミング言語を学び,<br class="pc-only">
                             その他にも専属の講師の元ビジネスマナーや、社長講話もカリキュラムに含まれ学習を行う。
                           </dd>
@@ -172,7 +174,7 @@
                     <li>
                       <dl>
                         <dt>2022/1月~</dt>
-                          <dd><strong>インターン実習(1カ月間)</strong>
+                          <dd><strong>インターン実習</strong>
                             ラテラル・シンキング株式会社にて１か月間のインターン実習を体験<br class="pc-only">
                             Laravel(php)を用いたTodoリスト作成が課題としてあげられ、要件定義からドキュメント作成、制作まで一連の作業を経験<br class="pc-only">
                             また最終日には社長等も交えた制作発表を行い、職業訓練校を修了
@@ -207,8 +209,8 @@
                 </ul>
               </section>
 <!-- Skill Component -->
-        <h3 class="section-title" id="skill">skill</h3>
-          <section class="section-component">
+        <h3 class="section__title" id="skill">skill</h3>
+          <section class="section__component">
             <div class="skill">
               <ul id="skill__ul">
                 <!-- HTML5入力欄-->
@@ -510,41 +512,43 @@
             </div>
           </section>
 <!-- WORKS Component -->
-        <h3 class="section-title" id="works">works</h3>
-        <section class="section-component">
+        <h3 class="section__title" id="works">works</h3>
+        <section class="section__component">
           <div class="works__container">
               <!--NEBUTA FES  -->
               <div class="works__component">
                 <!-- TITLE -->
-                <div class="works__component__title">
+                <div class="works__title">
                   <h3>作品No.1</h3>
                 </div>
                 <!-- IMAGE -->
-                <div class="works__component__img">
+                <div class="works__imgContainer">
                     <a href="https://nebutafestival.pages.dev/">
                       <img src="./images/nebutafes.png" alt="">
-                      <span class="works__component__link">WEBサイトへ</span>
+                      <span class="works__link">WEBサイトへ</span>
                     </a>
                 </div>
                 <!-- TEXT -->
-                <div class="works__component__text">
+                <div class="works__textContainer">
+                  <a href="https://github.com/ToyamaHideki/NebutaFestival.git">Github Page</a>
                 </div>
               </div>
               <!--家計簿アプリ  -->
               <div class="works__component">
                 <!-- TITLE -->
-                <div class="works__component__title">
+                <div class="works__title">
                   <h3>家計簿アプリ<span>開発途中</span></h3>
                 </div>
                 <!-- IMAGE -->
-                <div class="works__component__img">
+                <div class="works__imgContainer">
                     <a href="https://householdaccountbook.pages.dev/">
                       <img src="images/reactproject1.png" alt="">
-                      <span class="works__component__link">WEBサイトへ</span>
+                      <span class="works__link">WEBサイトへ</span>
                     </a>
                 </div>
                 <!-- TEXT -->
-                <div class="works__component__text">
+                <div class="works__textContainer">
+                  <a href="https://github.com/ToyamaHideki/NebutaFestival.git">Github Page</a>
                 </div>
               </div>
             </div>
