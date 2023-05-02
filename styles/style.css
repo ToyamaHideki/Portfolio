@@ -8,6 +8,9 @@
   /* フォントサイズ */
 
   /* 余白 */
+  --rem05:.5rem;
+  --rem15:1.5rem;
+  --rem5:5rem;
 
   --detail-font-size: 1.5rem;
   /* デザイン */
@@ -44,6 +47,13 @@ main {
   position: relative;
   align-items: center;
 }
+a{
+  font-size: var(--rem05);
+}
+a.link{
+  text-decoration: underline;
+  color: #4a8206;
+}
 .header {
   grid-area: header;
   min-width: 100vw;
@@ -52,26 +62,30 @@ main {
   box-shadow: 0px 3px 0 0 var(--primary-color);
 }
 
+a:hover{
+  cursor: pointer;
+}
+
 /* =================== REUSED TOKEN =================== */
 .section__component {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin: 3rem auto;
 }
 
 .section__title {
   display: block;
-  margin: 0 auto;
+  margin: 0 auto 5rem;
   font-family: "Corben", cursive;
   font-size: 5vw;
   min-width: max-content;
-  margin: 0;
   padding: 0;
   color: #e1c75b;
   text-shadow: 1px 1px 0px #c9594a;
 }
+
+
 
 /* =================== ITEM DEESIGN =================== */
 .custom-cursor {
@@ -170,23 +184,25 @@ main {
 
 .profile__imageContainer {
   max-width: 400px;
-  max-height: auto;
+  max-height: 400px;
   border-radius: 50%;
-  overflow: hidden;
+  box-shadow: var(--box-shadow);
+
 }
 
 .profile__img {
-  width: 350px;
-  height: 350px;
+  width: 100%;
+  height:100%;
+  overflow: hidden;
   object-fit: cover;
 }
 
 .profile__textarea {
-  margin-top: 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  min-width: 400px;
 }
 
 .profile-name {
@@ -199,13 +215,13 @@ main {
 .profile__description {
   font-size: 2rem;
   margin-bottom: 1rem;
+  display: block;
+  margin: 0 auto;
 }
 
-.profile__list {
-  margin-bottom: 1.5rem;
-}
 .initiative {
   width: 80%;
+  display: block;
 }
 
 .profile__list li {
@@ -216,7 +232,7 @@ main {
   align-items: center;
 }
 .profile__list li:last-child {
-  margin-bottom: 50px;
+  margin-bottom: var(--rem15);
 }
 
 .profile__list .genru {
@@ -318,7 +334,7 @@ main {
   margin: 1rem;
   padding: 1rem;
   flex-wrap: wrap;
-  max-width: 400px;
+  max-width: 300px;
   justify-content: center;
   align-items: center;
   background-color: #c5c5c56b;
@@ -326,14 +342,15 @@ main {
   box-shadow: var(--box-shadow);
 }
 
-.skill h3 {
-  margin: 0 0 5px;
-}
-
 .skill_name {
+  margin-top:1rem;
   font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .skill_text {
+  padding: 2rem;
   font-size: var(--detail-font-size);
 }
 
@@ -467,15 +484,19 @@ main {
   .profile__imageContainer {
     width: 350px;
     height: 350px;
-    margin: 0 auto;
+    margin-bottom: 50px;
   }
+
+  .main-wrapper {
+    max-width: 80vw;
+  }
+
 }
 
 @media screen and (max-width: 960px) {
   .profile__imageContainer {
     width: 300px;
     height: 300px;
-    margin: 0 auto;
   }
   .skill__wrap {
     flex-wrap: wrap;
@@ -493,6 +514,9 @@ main {
 }
 
 @media screen and (max-width: 520px) {
+  html {
+    min-height: 90vh;
+  }
 
   .section__title{
     font-size: 4rem;
@@ -501,12 +525,13 @@ main {
   .profile__imageContainer {
     width: 250px;
     height: 250px;
-    margin: 0 auto;
+  }
+  .profile__imageContainer img{
+    width: 100%;
+    height:100%;
   }
 
-  .timeline {
-    max-width: 80vw;
-  }
+
 
   /*Skill Component*/
   .skill_text_area .skill_name {
@@ -524,5 +549,6 @@ main {
   /*WORKS Component*/
   .works__imgContainer {
     max-width: 80vw;
-  }
+    object-fit: contain;
+    }
 }
