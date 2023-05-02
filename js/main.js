@@ -167,3 +167,13 @@ const dispCharSubtitle = () => {
     }, delay * i);
   }
 };
+
+// スマホの傾きで影の描写を反映する
+window.addEventListener("devicemotion", (e) => {
+  const { x, y } = e.accelerationIncludingGravity;
+  gsap.to(shadow, {
+    x: (-x * 0.1) / 7,
+    y: (-y * 0.1) / 7,
+    duration: 4,
+  });
+});
